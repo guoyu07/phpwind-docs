@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import withWidth, { SMALL } from 'material-ui/utils/withWidth';
+import withWidth, { SMALL, MEDIUM } from 'material-ui/utils/withWidth';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import GitHub from '../icons/GitHub';
@@ -68,15 +68,26 @@ class MainComponent extends Component {
         <div
           style={{
             transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
-            ...(status && width !== SMALL ? {
-              paddingLeft: 256
-            } : {})
+            ...this.getStyle()
           }}
         >
          {ReaderChildren}
         </div>
       </div>
     );
+  }
+
+  getStyle() {
+    const { status, width } = this.props;
+    if (status && width !== SMALL) {
+      return {
+        paddingLeft: 250,
+        margin: '0 auto',
+        maxWidth: width === MEDIUM ? 560 : 960
+      };
+    }
+
+    return null;
   }
 }
 
