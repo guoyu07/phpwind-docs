@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import withWidth, { SMALL, MEDIUM } from 'material-ui/utils/withWidth';
+import withWidth, { SMALL, MEDIUM, LARGE } from 'material-ui/utils/withWidth';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import GitHub from '../icons/GitHub';
@@ -79,15 +79,31 @@ class MainComponent extends Component {
 
   getStyle() {
     const { status, width } = this.props;
-    if (status && width !== SMALL) {
-      return {
-        paddingLeft: 250,
-        margin: '0 auto',
-        maxWidth: width === MEDIUM ? 560 : 960
+
+    let style1 = {};
+    let style2 = {};
+
+    if (status) {
+      style1 = {
+        paddingLeft: 256
       };
     }
 
-    return null;
+    if (width === LARGE) {
+      style2 = {
+        margin: '0 25px'
+      };
+    } else if (width === MEDIUM) {
+      style2 = {
+        margin: '0 20px'
+      };
+    } else if (width === SMALL) {
+      style2 = {
+        paddingLeft: 0
+      }
+    }
+
+    return { ...style1, ...style2 };
   }
 }
 
