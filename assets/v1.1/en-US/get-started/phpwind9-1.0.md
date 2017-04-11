@@ -1,41 +1,41 @@
-# 从 phpwind 9 升级到 Fans 1.0
+# phpwind 9 upgrade Fans 1.0
 
-从 phpwind 9 升级到 Fans 1.0 是一个很简单也很危险的操作，将会相近的描述如何升级。
+Upgrading from phpwind 9 to Fans 1.0 is a very simple and dangerous operation that will be similar to how to upgrade.
 
-> 升级前，先确认你所安装的模板以及插件是否过久，过久必须卸载，这里建议暂时先卸载所有插件和模板，将模板设置为默认的系统模板。
+> Before upgrading, make sure if you have installed plug-ins and templates for too long, too long to be unloaded here proposed temporary uninstall all plug-ins and templates, the template as the default template system.
 
-## 前置操作
+## Pre-operation
 
-* 你应当对你原有的 phpwind 9 程序进行备份。
-* 你应当对你原有的数据库进行备份。
-* 下载最新版本的 phpwind Fans 1.0 进入 [https://github.com/medz/phpwind/releases](https://github.com/medz/phpwind/releases) 页面找到最新的 Fans 1.0 程序，或者进入 QQ 群下载最新的 Fans 1.0 程序。
+* You should make a backup of your original phpwind 9 program.
+* You should make a backup of your original database.
+* Download the latest version of phpwind Fans 1.0 into the [https://github.com/medz/phpwind/releases](https://github.com/medz/phpwind/releases) page to find the latest Fans 1.0 program, or enter the QQ Group Download the latest Fans 1.0 program.
 
-## 简单粗暴的升级
+## Simple and rude upgrade
 
-> 此种方式能正常的升级 phpwind 9 到 Fans 1.0 但是数据库结构不会得到更改，当你使用升级后的程序迁移到高于 MySQL 5.5 版本以上的时候，程序会发生未知的错误。
+> This method can be normal to upgrade phpwind 9 to Fans 1.0 But the database structure will not be changed, when you use the upgraded program to move to higher than the MySQL 5.5 version of the above, the program will be an unknown error.
 
-在执行下列步骤之前，你应当先执行 「前置操作」：
+Before performing the following steps, you should perform the "pre-operation" first:
 
-1. 将下载的 Fans 1.0 归档包解压，将程序代码直接覆盖到原有的 phpwind 9 程序上。
-2. 执行文档最后的「完成步骤」。
+1. will download the Fans 1.0 archive extract, the program code directly to the original phpwind 9 procedures.
+2. Execute the final "completion step" of the document.
 
-## 安全的升级
+## Safe upgrade
 
-> 此种方法能安全的升级到 Fans 1.0 并保证在未来迁移 Fans 程序的时候能更好的兼容新环境，执行 「安全的升级」前，应当先执行 「前置操作」
+> This method can safely upgrade to Fans 1.0 and ensure that the Fans program in the future when the better compatible with the new environment, the implementation of "safe upgrade" before the implementation of the "pre-operation"
 
-升级如下：
+Upgrade follows:
 
-1. 写在
-2. 首先，应当进入你的 MySQL 数据库，将你的数据全部导出，注意，导出的数据不需要导出数据表结构（如果导出数据表结构，所有的升级就会白费。）。
-3. 你应当建立一个新的数据库，然后在新的程序上安装 Fans 1.0 程序。
-4. 进入 Fans 1.0 所占用的数据库中，将步骤 *2* 导出的数据导入到 Fans 1.0 的库中。注意，这里导入因为数据库的原因，可能会出现导入错误的情况，如果出现，应当按照 MySQL 的提示对数据进行编辑，这一般不会很多。
-5. 将你 phpwind 9 程序中的 `/attachment`、`/windid/attachment` 复制到 Fans 1.0 的程序目录下。
-6. 执行文档最后的「完成步骤」。
+1. Write in
+2. First of all, you should enter the MySQL database, export all your data, note that the exported data does not need to export data table structure (if export data table structure, all of the upgrade will be in vain.).
+3. You should create a new database and then install the Fans 1.0 program on the new program.
+4. Enter the database occupied by Fans 1.0, the step *2* derived data into the Fans 1.0 library. Note that the reasons for the importation of the database, there may be a case of import errors, if it appears, you should follow the MySQL prompts to edit the data, which is generally not a lot.
+5. Copy your phpwind 9 program in the `/attachment`,` /windid/attachment` to Fans 1.0 program directory.
+6. Execute the final "completion step" of the document.
 
-## 完成步骤
+## Complete the steps
 
-完成步骤主要用于清理升级后的缓存等数据信息。
+The completion step is mainly used to clean up the upgraded cache and other data information.
 
-请手动删除升级后程序中的 `/data/cache`、`/data/compile` 目录。
+Please manually remove the `/data/cache`,`/data/compile` directory in the post-upgrade program.
 
-> 删除后的缓存，程序会重新缓存内容，所以无须担心。
+> Delete the cache, the program will re-cache the content, so do not worry.
