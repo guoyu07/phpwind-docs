@@ -1,42 +1,42 @@
-Fans 版源代码贡献指南
+Fans Edition Source Code Contribution Guide
 ==================
 
-在引导中，将指导用户或者开发者进行 Fans 源代码积极贡献。
+In the guide, will guide the user or developer to make positive contributions to the Fans source code.
 
-## 错误反馈
+## Error feedback
 
-为了提倡积极协作，Fans 版强烈地鼓励使用 Pull Request，而不仅仅只是反馈错误。「错误反馈」可以以一个包含失败测试的 Pull Request 的形式发送。
+In order to promote active collaboration, Fans version strongly encourages the use of Pull Request, not just feedback errors. "Error Feedback" can be sent as a Pull Request containing a failed test.
 
-假如你提交了错误反馈，那么反馈中应该包含着标题和详尽的问题描述，并尽可能多的提供相关的信息和错误问题的代码示例。错误反馈的主要目的是让自己和其他人可以简单地重现并修复错误。
+If you submit the wrong feedback, then the feedback should contain a title and detailed description of the problem, and as much as possible to provide relevant information and error problems code examples. The main purpose of error feedback is to allow yourself and others to simply reproduce and fix the error.
 
-请记住，错误反馈的初衷是让其它有相同问题的人可以协作解决问题。不要期望反馈错误后会很快有人会马上修复它。创建错误反馈主要是为了能帮助你自己和其他人开始着手修复问题。
+Keep in mind that the original intention of error feedback is to allow other people with the same problem to work together to solve the problem. Do not expect feedback errors soon after someone will fix it immediately. Creating error feedback is mainly to help you and others start to fix the problem.
 
-> *Fans* 源代码托管在 *GitHub* 上面: [medz/phpwind](https://github.com/medz/phpwind)。
+> *Fans* source code hosted on *GitHub* above: [medz/phpwind](https://github.com/medz/phpwind).
 
-## 核心开发讨论
+## Core development discussion
 
-如果你想提出功能建议，或者改进现有的 Fans 的行为，请到 [medz/phpwind](https://github.com/medz/phpwind) 项目的 Issues 讨论。如果你想提出功能建议，我们希望你愿意为此功能贡献一些代码。
+If you want to suggest a feature, or acts to improve the existing Fans, go Issues [medz/phpwind](https://github.com/medz/phpwind) project discussion. If you would like to make a functional suggestion, we would like you to contribute some code to this feature.
 
-有关错误、新功能和现有功能的实现讨论会在 [QQ群: 30568679](https://shang.qq.com/wpa/qunwpa?idkey=4bdc6869a010f9371c81047847960e9d89ce0585e23308a4f00f99ecb27c48f7) 群中进行。Fans 的维护者 *Seven Du* 在非工作日时间 8pm 到 11pm 以及周末全天在线，其它时间偶尔也会出现。
+Realization of the error, new features and existing features will be discussed in [QQ group:30568679] conduct(https://shang.qq.com/wpa/qunwpa?idkey=4bdc6869a010f9371c81047847960e9d89ce0585e23308a4f00f99ecb27c48f7) group. Fans defenders *Seven Du* are available online at non-working days from 8pm to 11pm and on weekends, and other times occasionally.
 
-## 选择分支
+## Select the branch
 
-针对不同版本，会在 Fans 版仓库拥有不同的分支，只有向上兼容的修复才会合并到 master 分支中，如果只是针对 对应老版本的修复，永远不应该发送到 master 分支。
+For different versions, there are different branches in the Fans repository, and only upwards compatible fixes are merged into the master branch, and should only be sent to the master branch if it is only for the old version of the fix.
 
-主要的 新功能应该都发送到 master 分支，它包含下一版的 Fans 发布内容。
+The main new features should be sent to the master branch, which contains the next version of the Fans release content.
 
-次要的 且与现有的 Fans 发布版本 完全向下兼容 的功能可以发送到最新的稳定分支。
+Minor and fully compatible with the existing Fans release version can be sent to the latest stable branch.
 
-如果不确定你的功能是主要的还是次要的，请在 QQ 群问 Seven Du。
+If you are not sure whether your function is primary or secondary, please ask Seven Du in the QQ group.
 
-## 安全漏洞
+## Security vulnerabilities
 
-如果你发现安全漏洞，可以在仓库的 Issues 中提交，或者发送邮件到 [shiweidu@outlook.com](mailto:shiweidu@outlook.com)，所有的安全漏洞将会及时予以处理。
+If you find security holes, you can submit Issues warehouse, or send an email to [shiweidu@outlook.com](mailto:shiweidu@outlook.com), all security vulnerabilities will be addressed promptly.
 
-## 编码风格
+## Coding style
 
-Fans 版严格遵循 **PSR-2** 编码规范和 **PSR-4** 自动加载规范。
+Fans Edition strictly follows the **PSR-2** Encoding Specification and **PSR-4** Auto Load Specification.
 
 ## StyleCI
 
-Fans 版使用 StyleCI 来做代码矫正，所有 PR 都会在合并后被矫正代码样式，这样做允许我们把精力放到贡献的内容上，而不是代码风格。
+Fans Edition uses StyleCI to do to correct the code, all the PR after the merger will be in the style correction codes, this allows us to concentrate on the content contribution, rather than coding style.

@@ -1,14 +1,14 @@
-# Fans 安装指南
+# Fans Installation Guide
 
-> 安装指南将讲解如何安装 Fans 版程序。
+> Installation Guide will explain how to install Fans version of the program.
 
-## 服务器要求
+## Server requirements
 
-Fans 程序会有一些系统上的要求。
+Fans program will have some system requirements.
 
-你需要确保你的服务器上安装了下面的几个拓展：
+You need to make sure that the following extensions are installed on your server:
 
-- PHP >= 5.3.12
+- PHP >= 5.6.*
 - OpenSSL PHP Extension
 - PDO PHP Extension
 - Mbstring PHP Extension
@@ -19,50 +19,55 @@ Fans 程序会有一些系统上的要求。
 - mcrypt PHP Extension
 - zip PHP Extension
 
-> 其实大部分环境以上都是被默认安装的，但是还是建议检查环境是否都有这些拓展安装。
+> In fact, most of the above environment is installed by default, but it is recommended to check whether the environment has to expand these installation.
 
-## 安装 Fans
+## Installation Fans
 
-> 这里讲解的是使用从 GitHub 获取源码的形式安装，而非 dist 安装。
+> Here is the use of GitHub from the source to obtain the form of installation, rather than dist installation.
 
-首先，你应当进入 [releases](https://github.com/medz/phpwind/releases) 页面，下载 Latest 的 Fsns 1.0 程序，选择 **source code** 下载源代码。
+First of all, you should enter the [releases] (https://github.com/medz/phpwind/releases) page, download the Latest Fsns program, select ** source code ** download the source code.
 
-> 一般有 zip 和 tar.gz 两个版本，自行选择。
+>Generally there are two versions of zip and tar.gz, choose.
 
-然后你需要安装一份 [Composer](http://docs.phpcomposer.com/) 但是考虑到中国大陆地区的网络环境问题，推荐安装完成后配置 [中国全量镜像](https://pkg.phpcomposer.com/) 这样，你在中国大陆地区就可以正常快速的使用 Composer 了。
+Then you need to install a [Composer] (http://docs.phpcomposer.com/) but taking into account the mainland China's network environment, it is recommended to install the configuration [China full image] (https://pkg.phpcomposer.com/) so that you can use the Composer in the Chinese mainland.
 
-安装完成 Composer 后，将下载的 **source code** 解压（放置到你喜欢的网站位置）。进入程序目录执行下列命令：
+After installing the Composer, download the ** source code ** to unpack it (place it into your favorite site location). Enter the program directory to execute the following commands:
 
 ```shell
 composer install
 ```
 
-> 如果你将 *composer.phar* 也放置在 Fans 根目录，上述 `composer` 关键词以 `php composer.phar` 代替。
+> If you place * composer.phar * also in the Fans root directory, the `composer` keyword above is replaced with `php composer.phar`.
 
-执行命令后 Composer 会自动下载 Fans 程序需要的依赖。
+Composer will automatically download the required dependencies Fans program after executing the command.
 
-完成后，打开你的网站 `https://yousite/install.php` 按照网页要求填写网站配置信息即可安装完成。
+When finished, turn on your website `https://yousite/install.php` asked to fill out web site in accordance with the configuration information to complete the installation.
 
+> In the Fans 1.1 will start the root moved to the `/public` directory, 1.1 before the version is still using the root directory for the public directory configuration, 1.1 version of the public directory to start the configuration directory for the root of the site.
 
-## 配置
+## Configurations
 
-### 配置文件
+### Public directory
 
-Fans 框架所有的配置文件都存放在 conf 目录下。每个选项都被加入文档，所以你可以自由的浏览文件，轻松的熟悉你的选项。
+After installing Fans, you need to configure your Web server's root directory as public directory. The index.php file for this directory goes into the application's front-end processor as all HTTP requests.
 
-### 目录权限
+### Configuration file
 
-安装 Fans 之后，你需要配置一些权限。 `data`、`attachment`、`windid/attachment` 目录应该允许你的 Web 服务器写入，否则 Fans 将无法写入导致程序运行不正常。
+Fans framework for all configuration files are stored in the config directory. Each option is added to the document, so you are free to browse files, easily familiar with your options.
 
-## Web 服务器配置
+### Directory permissions
 
-> 优雅连接，这个在 Fans 1.0 中保持和 phpwind 9 一致
+After installing Fans, you need to configure some permissions. `Data`,` attachment`, `windid/attachment` directory should allow your web server to write, otherwise Fans will not be able to write to cause the program to run abnormally.
+
+## Web server configuration
+
+> Elegant connection, this must be configured to allow the web server to access the dynamic dynamic website content with an elegant link, and all link requests should be configured to `public/index.php` as this is the only front-end processor for the Fans program.
 
 ### Apache
 
-Fans 已经为你做好了 Apache 的配置，通过 `.htaccess` 文件来让 URL 不要需要 index.php 即可访问。在 Apache 启用 优雅链接之前，请先确认是否开启了 *mod_rewrite* 模块，以便 .htaccess 文件发挥作用。
+Fans Apache configuration has already done for you, to make the URL by `public/.htaccess` index.php file do not need to access. Before enabling Apache's elegant link, make sure that the * mod_rewrite * module is turned on so that the `.htaccess` file is working.
 
-如果 Fans 附带的 .htaccess 文件在 Apache 中无法使用的话，请尝试下方的做法：
+If the `.htaccess` file included with Fans is not available in Apache, try the following:
 
 ```
 RewriteEngine On
@@ -74,7 +79,7 @@ RewriteRule ^ index.php [L]
 
 ### Nginx
 
-如果你使用 Nginx ，在你的网站配置中加入下述代码将会转发所有的请求到 index.php 前端控制器。
+If you use Nginx, adding the following code to your site configuration will forward all requests to the `index.php` front end controller.
 
 ```
 location / {

@@ -1,3 +1,3 @@
-# 升级说明
+# Upgrade Introduction
 
-> 我们尽量罗列出每一个不兼容的变更。但因为其中一些不兼容变更只存在于程序很不起眼的地方，事实上只有一小部分会真正影响到你的应用程序。
+> We try to set out each incompatible change. But because some of them are not compatible with the change program exists only in a very inconspicuous place, In fact only a small part can really affect your application.

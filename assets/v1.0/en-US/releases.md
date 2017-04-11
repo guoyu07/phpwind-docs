@@ -1,18 +1,18 @@
-# Fans 发行说明
+# Fans Release Notes
 
-这里将讲解 Fans 版本是如何决定发行版本的。
+Here will explain how the Fans version determines the release version.
 
-## 支持策略
+## Support Policy
 
-目前，我们只发行普通版本的 Fans 程序，并且对应版本将提供 **六个月** 的 Bug 修复和 **一年** 的安全修复支持。
+At present, we only issue a regular version of the Fans program, and the corresponding version will provide **six months** of bug fix And **one year** of security fix support.
 
-对于 **LTS** 版本，暂无发布计划，因为我们还没有迭代到合适的版本进行发布。
+For **LTS** release, no release plan, because we do not have the appropriate version of iterations to publish.
 
 ## Fans 1.0
 
-Fans 1.0 将会在 phpwind 9.0.1 版本的基础上进行优化，新特性如下：
+Fans 1.0 will be optimized on the basis of phpwind 9.0.1 version，New features：
 
-* 抽离 WindFramework 框架为独立包。
-* 集成 Composer 支持。
-* 支持 SSL 部署。
-* PHP 7 的兼容支持。
+* Pull out the WindFramework framework for standalone packages.
+* Integrated Composer support.
+* Support for SSL deployments.
+* PHP 7 compatibility support.
