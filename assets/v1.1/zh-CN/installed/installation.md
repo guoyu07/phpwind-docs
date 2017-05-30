@@ -87,3 +87,45 @@ location / {
 }
 ```
 
+##### 完整的配置演示
+
+```
+server {
+    listen       80;
+    server_name  phpwind.io;
+
+    client_max_body_size 30M;
+
+    location / {
+        root   /usr/local/var/www/phpwind/public/;
+        index  index.php index.html index.htm;
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        root           /usr/local/var/www/phpwind/public/;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ /\.ht {
+        deny  all;
+    }
+}
+```
+
+完整的演示可以让你又一个更好册参考，推荐配置都按照完整演示配置，例如静态资源缓存不要再 Nginx 设置，后续我们会支持 cdn 来完成。
+
+## 完成安装
+
+进入 Fans 1.1 目录
+
+依赖包安装：`composer install`
+
+安装 Fans 1.1 `php wind install`
+
+目录执行完成，如果是本机安装会自动打开浏览器到创始人配置界面，如果是远程机安装，打开执行完成后提示的地址进行配置。
+
