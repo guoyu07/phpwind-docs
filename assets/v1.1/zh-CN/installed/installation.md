@@ -8,7 +8,7 @@ Fans 程序会有一些系统上的要求。
 
 你需要确保你的服务器上安装了下面的几个拓展：
 
-- PHP >= 5.6.*
+- PHP >= 7.0
 - OpenSSL PHP Extension
 - PDO PHP Extension
 - Mbstring PHP Extension
@@ -83,9 +83,16 @@ RewriteRule ^ index.php [L]
 
 ```
 location / {
-    try_files $uri $uri/ /index.php?$query_string;
+    try_files $uri $uri/ /index.php$is_args$args;
+}
+
+location ~ \.php$ {
+    try_files $uri /index.php =404;
+    ...
 }
 ```
+
+> 上面的 `...` 代表常规的 Fast CGI 配置
 
 ##### 完整的配置演示
 
@@ -94,21 +101,19 @@ server {
     listen       80;
     server_name  phpwind.io;
 
-    client_max_body_size 30M;
+    root /var/www/fans/public/;
+    index index.php index.html index.htm;
 
     location / {
-        root   /usr/local/var/www/phpwind/public/;
-        index  index.php index.html index.htm;
-        try_files $uri $uri/ /index.php?$query_string;
+        try_files $uri $uri/ /index.php$is_args$args;
     }
 
     location ~ \.php$ {
-        root           /usr/local/var/www/phpwind/public/;
+        try_files $uri /index.php =404;
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         include        fastcgi_params;
-        try_files $uri $uri/ /index.php?$query_string;
     }
 
     location ~ /\.ht {
